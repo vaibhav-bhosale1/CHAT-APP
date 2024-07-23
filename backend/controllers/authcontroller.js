@@ -4,9 +4,9 @@ import bcryptjs from "bcryptjs"
 
 export const signup=async (req,res)=>{
   try{
-    const {fullname,username,password,confirmedPassword,gender}=req.body;
+    const {fullName,username,password,confirmPassword,gender}=req.body;
 
-  if(password!==confirmedPassword){
+  if(password!==confirmPassword){
       return res.status(400).json({error:"Passwords dont match"})
   }
   const user=await User.findOne({username});
@@ -19,7 +19,7 @@ export const signup=async (req,res)=>{
   const profilename=`https://ui-avatars.com/api/?name={username}`
 
   const newUser=new User({
-      fullname,
+      fullName,
       username,
       password:hashedpassword,
       profilepic:profilename,
@@ -42,7 +42,7 @@ export const signup=async (req,res)=>{
 }
  catch(error){
   console.log("error in signup controller",error.message);
-  res.status(500).json({error:"Internal server error"});
+  res.status(500).json({error:"Internal server errorr"});
 }
 }
 
