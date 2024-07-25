@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
-import useConversation from '../../zustand/useConversation';
-import useGetConversation from '../../hooks/useGetConversation'
-import toast from 'react-hot-toast';
+import useConversation from "../../zustand/useConversation";
+import useGetConversation from "../../hooks/useGetConversation";
+import toast from "react-hot-toast";
+
 const Searchinput = () => {
 	const [search, setSearch] = useState("");
 	const { setSelectedConversation } = useConversation();
@@ -37,4 +38,4 @@ const Searchinput = () => {
 		</form>
 	);
 };
-export default Searchinput
+export default Searchinput;
