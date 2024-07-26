@@ -8,7 +8,7 @@ const conversationSchema=new mongoose.Schema({
     message:[{
          type:mongoose.Schema.Types.ObjectId,
          ref:"messages",
-         default:[]
+         default:[],
     }]
 },{timestamps:true})
 
