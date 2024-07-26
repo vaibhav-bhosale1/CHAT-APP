@@ -7,7 +7,8 @@ export const useAuthContext = () => {
 };
 
 export const AuthContextProvider = ({ children }) => {
-	const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem("chat-user")) || null);
+	let fallbackJson = '{ "user": "null" }';
+	const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem("chat-user")) || fallbackJson);
 
 	return <AuthContext.Provider value={{ authUser, setAuthUser }}>{children}</AuthContext.Provider>;
 };
