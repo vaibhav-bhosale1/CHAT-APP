@@ -9,7 +9,7 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
   const isOnline = onlineUsers.includes(conversation._id);
 
   // State to store the avatar URL
-  const [avatarUrl, setAvatarUrl] = useState('');
+  const [avatarUrl, setAvatarUrl] = useState('null');
 
   // Function to fetch random avatar URL from robohash.org
   const fetchAvatar = async () => {
