@@ -7,7 +7,7 @@ const generatetokens=(userId,res)=>{
         maxAge:15*24*60*6*1000,
         httpOnly:true,//prevent from attack
         sameSite:"strict",
-        secure:process.env.MODE_ENV !=="development"
+      
     });
 };
 
