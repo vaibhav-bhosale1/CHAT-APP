@@ -4,7 +4,7 @@ import authroutes from "./routes/authroutes.js"
 import messageroutes from "./routes/messageroutes.js"
 import connecttomongodb from "./db/connecttomongodb.js";
 import cookieParser from "cookie-parser";
-import { dirname } from 'path';
+
 import userRoutes from "./routes/userRoutes.js"
 import { app,server } from "./socket/socket.js";
 import path from "path"
