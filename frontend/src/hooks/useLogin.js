@@ -16,7 +16,8 @@ const useLogin = () => {
 				body: JSON.stringify({username,password}),
 			});
 			if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
+                const errorData = await res.json();
+            throw new Error(`HTTP error! status: ${res.status}, message: ${errorData.message || 'Unknown error'}`);
             }
 			const data = await res.json();
 			if (data.error) {
