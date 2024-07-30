@@ -18,7 +18,7 @@ const Login = () => {
 			<div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
 				<h1 className='text-3xl font-semibold text-center text-gray-300'>
 					Login To
-					<span className='text-rose-500'> ChatterBox</span>
+					<span className='text-fuchsia-700'> ChatterBox</span>
 				</h1>
 
 				<form onSubmit={handleSubmit}>
