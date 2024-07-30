@@ -8,6 +8,11 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
 	const { onlineUsers } = useSocketContext();
 	const isOnline = onlineUsers.includes(conversation._id);
 
+	// Generate a default Robohash URL if no profilePic is available
+	const getAvatarUrl = (id) => `https://robohash.org/${id}?set=set4`;
+
+	const profilePic = conversation.profilePic || getAvatarUrl(conversation._id);
+
 	return (
 		<>
 			<div
@@ -18,7 +23,7 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
 			>
 				<div className={`avatar ${isOnline ? "online" : ""}`}>
 					<div className='w-12 rounded-full'>
-						<img src={conversation.profilePic} alt='user avatar' />
+						<img src={profilePic} alt='user avatar' />
 					</div>
 				</div>
 
@@ -34,4 +39,5 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
 		</>
 	);
 };
+
 export default Conversation;
