@@ -12,7 +12,7 @@ const signup= async ({fullName,username,password,confirmPassword,gender})=>{
         }
         setloading(true);
 		try {
-			const res = await fetch("https://chat-app-wsxh.onrender.com/api/auth/signup",{
+			const res = await fetch("/api/auth/signup",{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ fullName, username, password, confirmPassword, gender }),
