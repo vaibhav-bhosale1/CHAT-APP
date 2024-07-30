@@ -8,17 +8,13 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
 	cors: {
-		origin: ["https://chat-app-six-pearl.vercel.app"],
+		origin: ["htpp:localhost:3000"],
 		methods: ["GET", "POST"],
 		credentials: true,
 	},
 });
 
-app.use(cors({
-    origin: "https://chat-app-six-pearl.vercel.app", // Allow your frontend origin
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}));
+
 
 export const getReceiverSocketId = (receiverId) => {
 	return userSocketMap[receiverId];
