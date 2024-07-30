@@ -9,6 +9,7 @@ const io = new Server(server, {
 	cors: {
 		origin: ["https://chat-app-six-pearl.vercel.app"],
 		methods: ["GET", "POST"],
+		credentials: true,
 	},
 });
 
